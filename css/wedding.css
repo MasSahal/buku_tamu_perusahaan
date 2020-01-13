@@ -1,0 +1,4 @@
+body{
+    background: #F5F5F5 url("../images/bg.png") repeat scroll 0px 1px;
+    background-attachment: fixed;
+}
