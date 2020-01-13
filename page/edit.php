@@ -22,17 +22,30 @@ $data = $ambil->fetch_assoc();
                         <label for="alamat">Alamat</label>
                         <textarea name="alamat" required id="alamat" rows="3" class="form-control" aria-describedby="helpId"><?=$data['alamat_tamu'];?></textarea>
                     </div>
+                    <div class="form-group">
+                        <input type="submit" value="Set Tanggal Saat Ini" class="btn btn-info btn-sm mb-4" name="set_date">
+                    </div>
                     <input type="submit" class="btn btn-primary btn-block" name="tamu" value="Simpan">
                     <?php
 
+                    if (isset($_POST['set_date'])) {
+                        $tgl = date('H : i') .' - '. date('D, M  Y');
+                        $set_date = $koneksi->query("UPDATE tb_tamu SET tgl_tamu='$tgl' WHERE id_tamu='$id'");
+                        
+                        if ($set_date == 'success') {
+                            echo "<script>alert('Behasil set ke $tgl');</script>";
+                        } else {
+                            echo "<script>alert('gagal');</script>";
+                        }
+                    }
                     if (isset($_POST['tamu'])) {
                         $nama = $_POST['nama'];
                         $perusahaan = $_POST['perusahaan'];
-                        $tgl = date('H : i') .' - '. date(' D, M  Y');
+                        
                         $alamat = $_POST['alamat'];
-
-                        $up = $koneksi->query("UPDATE tb_tamu SET nama_tamu='$nama', perusahaan_tamu='$perusahaan', tgl_tamu='$tgl', alamat_tamu='$alamat' WHERE id_tamu='$id'");
-
+                        
+                        $up = $koneksi->query("UPDATE tb_tamu SET nama_tamu='$nama', perusahaan_tamu='$perusahaan', alamat_tamu='$alamat' WHERE id_tamu='$id'");
+                        
                         if ($up == 'success') {
                             echo "<script>alert('Behasil');</script>";
                             echo "<meta http-equiv='refresh' content='0.1;url=index.php?page=guest'>";

@@ -22,7 +22,7 @@
                     if (isset($_POST['tamu'])) {
                         $nama = $_POST['nama'];
                         $perusahaan = $_POST['perusahaan'];
-                        $tgl = date('H : i') .' - '. date(' D, M  Y');
+                        $tgl = date('H : i') .' - '. date('D, M  Y');
                         $alamat = $_POST['alamat'];
 
                         $add = $koneksi->query("INSERT INTO tb_tamu (nama_tamu, perusahaan_tamu, tgl_tamu, alamat_tamu) VALUES ('$nama','$perusahaan','$tgl','$alamat')");

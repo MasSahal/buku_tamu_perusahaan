@@ -27,7 +27,7 @@
                         <td><?= $data['alamat_tamu']; ?></td>
                         <td>
                             <a href="?page=edit&id=<?= $data['id_tamu']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Ubah</a>
-                            <a href="?page=hapus&id=<?= $data['id_tamu']; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+                            <a href="?page=hapus&id=<?= $data['id_tamu']; ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                     </tr>
                 <?php } ?>
