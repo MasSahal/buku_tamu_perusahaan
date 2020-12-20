@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tb_tamu` (
   `id_tamu` int(11) NOT NULL,
   `nama_tamu` varchar(50) NOT NULL,
+  `perusahaan_tamu` varchar(50) NOT NULL,
   `email_tamu` varchar(50) NOT NULL,
   `tgl_tamu` varchar(50) NOT NULL,
   `alamat_tamu` text NOT NULL
@@ -40,9 +41,9 @@ CREATE TABLE `tb_tamu` (
 -- Dumping data for table `tb_tamu`
 --
 
-INSERT INTO `tb_tamu` (`id_tamu`, `nama_tamu`, `email_tamu`, `tgl_tamu`, `alamat_tamu`) VALUES
-(2, 'Danuartha ', 'danuartha@localhost.com', '04 : 05 -  Mon, Jan  2020', 'Pekalipan - Cirebon'),
-(4, 'Andy', 'andy@localhost.com', '10 : 24 -  Mon, Jan  2020', 'Gunungsari - Cirebon');
+INSERT INTO `tb_tamu` (`id_tamu`, `nama_tamu`,`perusahaan_tamu`, `email_tamu`, `tgl_tamu`, `alamat_tamu`) VALUES
+(2, 'Danuartha ','Garmed', 'danuartha@localhost.com', '04 : 05 -  Mon, Jan  2020', 'Pekalipan - Cirebon'),
+(4, 'Andy', 'Garmed','andy@localhost.com', '10 : 24 -  Mon, Jan  2020', 'Gunungsari - Cirebon');
 
 --
 -- Indexes for dumped tables
